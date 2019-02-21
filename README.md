@@ -1,15 +1,10 @@
 # Supplementary material
 * Technical Explanation: this part focuses more on an intuitive explanation and we hope to provide the reader more technical explanation and why we come up with this idea.
   - [Domain Adaptation](https://github.com/djxvii/icse19_GAN/blob/master/DOMAIN_ADAPTATION.md)
-  - [Estimation for OOV's Embedding](https://github.com/djxvii/icse19_GAN/blob/master/OOV_ESTIMATION.md)
+
 * [Usage of source code in Python](https://github.com/djxvii/icse19_GAN/blob/master/README.md#usage)
 * Data: will be provided later
 * [Newly found mappings](https://github.com/djxvii/icse19_GAN/blob/master/new_found/new_found_apis.csv): the list of 425 newly found API mappings.
-* Contributions:
-  - We are the first to use Generative Adversarial Networks to adapt the domains for cross API learning task.
-  - We are the first to propose an on-the-fly embedding estimation given minimal context for API mapping.
-  - Our approach proved that without the human knowledge to manually label mappings as the seed dictionary, we are comparable to supervised approach (Api2Api2) that requires 688 seeds for the dictionary.  
-  - We found larger number of mappings than baselines (StaMiner, MAM, Api2Api).
   
 # What is the problem?
 **Cross-language API mappings**: to provide mappings of similar APIs across languages, e.g Figure below.
@@ -39,7 +34,7 @@ In addition, most of the previous work focus on mining the mappings on a stable 
 Is there another way to map the 2 vector spaces without the need for parallel data? Or is there an unsupervised approach that can adapt the 2 spaces?
 
 # Core idea
-To represent 2 languages as the domain vector spaces X and Y and try to align them together with no supervision. This problem can be generalized into the domain adaptation problem, more intuive explaination can be found [here](https://github.com/djxvii/icse19_GAN/blob/master/DOMAIN_ADAPTATION.md)
+To represent 2 languages as the domain vector spaces X and Y and try to align them together with very little supervision. This problem can be generalized into the domain adaptation problem, more intuive explaination can be found [here](https://github.com/djxvii/icse19_GAN/blob/master/DOMAIN_ADAPTATION.md)
 ![Illustration](figs/self_refinement.png)
 
 In addition, the OOV problem can happen due to the fast evolution of software, hence the domains can continue to evolve in the future, thus the OOV will appear. Because of this reason, we propose the an on-the-fly accurate estimation of the OOV embeddings with minimal data based on: a) the structural + data dependency context from the AST b) good initialization of the OOV weight of the Word2Vec neural network.
