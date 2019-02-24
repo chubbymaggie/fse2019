@@ -35,11 +35,6 @@ Is there another way to map the 2 vector spaces without the need for parallel da
 
 # Core idea
 To represent 2 languages as the domain vector spaces X and Y and try to align them together with very little supervision. This problem can be generalized into the domain adaptation problem, more intuive explaination can be found [here](https://github.com/djxvii/fse2019/blob/master/DOMAIN_ADAPTATION.md)
-![Illustration](figs/self_refinement.png)
-
-In addition, the OOV problem can happen due to the fast evolution of software, hence the domains can continue to evolve in the future, thus the OOV will appear. Because of this reason, we propose the an on-the-fly accurate estimation of the OOV embeddings with minimal data based on: a) the structural + data dependency context from the AST b) good initialization of the OOV weight of the Word2Vec neural network.
-
-We envision this work as cornerstone for our next step, which is the task to map API sequences across languages unsupervisedly. Since mapping sequences of APIs can be a more interesting task than the single API mapping task, but to mine the sequences unsupervisedly is not easy and can not be achieved immediately. A sequence of APIs constitute of multiple APIs, as long as we have the basis from single mapping, one can leverage this information to build a general framework for API sequence mapping in an unsupervised manner, which can be very useful for any pair of languages.
 
 # Usage
 
